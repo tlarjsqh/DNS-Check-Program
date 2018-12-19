@@ -79,10 +79,19 @@ namespace dns_check_program_bank_
                 string kb_dns = ip.ToString(); // 국민 현재 dns
                 string kb_check = "203.248.188.31"; // 국민 원래 dns
                 string kb_check1 = "121.129.49.31"; 
-                if (kb_dns == kb_check || kb_dns == kb_check1)
+                if (kb_dns == kb_check)
                 {
                     MessageBox.Show("해당 사이트 DNS가 변조 되지 않았습니다.", "DNS 변조 체크");
                     MessageBox.Show("현재 DNS : " + kb_dns.ToString() + "\r\n기본 DNS : " + kb_check, "DNS 변조 체크");
+                    if (MessageBox.Show("국민은행 사이트로 이동하시겠습니까?", "DNS 변조 체크", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Process.Start("https://www.kbstar.com/");
+                    }
+                }
+                else if (kb_dns == kb_check1)
+                {
+                    MessageBox.Show("해당 사이트 DNS가 변조 되지 않았습니다.", "DNS 변조 체크");
+                    MessageBox.Show("현재 DNS : " + kb_dns.ToString() + "\r\n기본 DNS : " + kb_check1, "DNS 변조 체크");
                     if (MessageBox.Show("국민은행 사이트로 이동하시겠습니까?", "DNS 변조 체크", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         Process.Start("https://www.kbstar.com/");
