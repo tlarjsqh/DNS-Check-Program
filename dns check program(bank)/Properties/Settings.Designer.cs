@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.Properties
+namespace dns_check_program_bank_.Properties
 {
 
 
